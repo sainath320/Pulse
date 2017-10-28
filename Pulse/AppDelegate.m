@@ -17,6 +17,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIImage*image=[UIImage imageNamed:@"brn.jpg"];
+    UIImageView*imgView=[[UIImageView alloc]initWithImage:image];
+    imgView.frame=[[UIScreen mainScreen]bounds];
+    imgView.autoresizingMask=UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+    [self.window.rootViewController.view addSubview:imgView];
+    [self.window.rootViewController.view bringSubviewToFront:imgView];
+    [UIView animateWithDuration:3.5f delay:2.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        imgView.alpha=.0f;
+        CGFloat x=-60.0f;
+        CGFloat y=-120.0f;
+        imgView.frame=CGRectMake(x, y, imgView.frame.size.width-2*x, imgView.frame.size.height-2*y);
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [imgView removeFromSuperview];
+        }
+    }];
     return YES;
 }
 
