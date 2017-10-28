@@ -22,11 +22,11 @@
     self.profilePic.clipsToBounds=true;
     NSMutableString*string=[[NSMutableString alloc]initWithString:@"http://www.brninfotech.com/pulse/modules"];
    NSString*proString= [self.del.profile substringFromIndex:2];
-    NSString*mainString=[string stringByAppendingString:proString];
+    proString=[string stringByAppendingString:proString];
     
-    NSData*data=[NSData dataWithContentsOfURL:[NSURL URLWithString:mainString]];
+    NSData*data=[NSData dataWithContentsOfURL:[NSURL URLWithString:proString]];
     self.profilePic.image=[UIImage imageWithData:data];
-    NSLog(@"Image is %@",mainString);
+    NSLog(@"Image is %@",proString);
     self.menuArray=@[@"Home",@"Create Request",@"Apply Leave",@"Location",@"App Search",@"FeePayment",@"Logout"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
