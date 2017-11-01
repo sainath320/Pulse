@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Singleton.h"
+#import "AppDelegate.h"
 
 @interface AttendenceView : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
-
+@property (weak, nonatomic) IBOutlet UITableView *attendenceTable;
+@property AppDelegate*AD;
 @end

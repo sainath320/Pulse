@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "Singleton.h"
 
 @interface ViewController : UIViewController
 @property AppDelegate*delegate;
-@property (weak, nonatomic) IBOutlet UIView *imgCNV;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
 @property (weak, nonatomic) IBOutlet UIButton *checkBTN;
-@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+
 @property CALayer*border;
 @property (weak, nonatomic) IBOutlet UITextField *emailTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
-@property NSURLSession*session;
-@property NSMutableURLRequest*req;
-@property NSURLSessionDataTask*dataTask;
+@property NSString*string;
 @property NSMutableDictionary*responseDict;
 - (IBAction)onClickLogin:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;

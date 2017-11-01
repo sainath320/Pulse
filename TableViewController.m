@@ -20,13 +20,13 @@
     self.del=(AppDelegate*)[[UIApplication sharedApplication]delegate];
     self.profilePic.layer.cornerRadius=self.profilePic.frame.size.width/2;
     self.profilePic.clipsToBounds=true;
-    NSMutableString*string=[[NSMutableString alloc]initWithString:@"http://www.brninfotech.com/pulse/modules"];
-   NSString*proString= [self.del.profile substringFromIndex:2];
-    proString=[string stringByAppendingString:proString];
+    NSString*string=[self.del.profile stringByReplacingOccurrencesOfString:@".." withString:@"http://www.brninfotech.com/pulse/modules"];
+   
     
-    NSData*data=[NSData dataWithContentsOfURL:[NSURL URLWithString:proString]];
+    
+    NSData*data=[NSData dataWithContentsOfURL:[NSURL URLWithString:string]];
     self.profilePic.image=[UIImage imageWithData:data];
-    NSLog(@"Image is %@",proString);
+    NSLog(@"Image is %@",string);
     self.menuArray=@[@"Home",@"Create Request",@"Apply Leave",@"Location",@"App Search",@"FeePayment",@"Logout"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

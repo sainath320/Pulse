@@ -25,8 +25,11 @@
 
 -(void)createElements{
     self.delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
-    self.imgCNV.layer.cornerRadius=self.imgCNV.frame.size.width/9;
-    self.imgCNV.clipsToBounds=TRUE;
+    self.contentView.layer.shadowOffset=CGSizeMake(0.0f, 0.0f);
+    self.contentView.layer.shadowColor=[UIColor redColor].CGColor ;
+    self.contentView.layer.shadowRadius=7.0f;
+    self.contentView.layer.shadowOpacity=3.0f;
+    self.contentView.layer.shadowPath=[UIBezierPath bezierPathWithRect:self.contentView.bounds].CGPath;
     
     [self.checkBTN setBackgroundImage:[UIImage imageNamed:@"uncheck.jpeg"] forState:UIControlStateNormal];
     [self.checkBTN setBackgroundImage:[UIImage imageNamed:@"check.jpeg"] forState:UIControlStateSelected];
@@ -72,18 +75,19 @@
 
 - (IBAction)onClickLogin:(id)sender {
     
-    self.session=[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    self.req=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.brninfotech.com/pulse/modules/admin/ValidateLogin.php"]];
-    self.req.HTTPMethod=@"POST";
+    Singleton*pulse=[Singleton sharedPulse];
+    self.string=@"http://www.brninfotech.com/pulse/modules/admin/ValidateLogin.php";
+    [pulse serverCommunication:self.string];
     
     NSMutableString*dataString=[NSMutableString stringWithFormat:@"funcName=%@&registeredEmail=%@&registeredPassword=%@",@"verifyLogin",self.emailTF.text,self.passwordTF.text];
+    
     NSData*dataPassToServer=[dataString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString*postLength=[NSString stringWithFormat:@"%lu",(unsigned long)[dataPassToServer length]];
-    [self.req setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [self.req setValue:@"application/x-www-form-urlencoded;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [self.req setHTTPBody:dataPassToServer];
+    [pulse.urlReq setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [pulse.urlReq setValue:@"application/x-www-form-urlencoded;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [pulse.urlReq setHTTPBody:dataPassToServer];
     
-    self.dataTask=[self.session dataTaskWithRequest:self.req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    pulse.dataTask=[pulse.session dataTaskWithRequest:pulse.urlReq completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data!=nil) {
             
                 self.responseDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -113,7 +117,7 @@
         }
     }];
     
-    [self.dataTask resume];
+    [pulse.dataTask resume];
     
     
 }
