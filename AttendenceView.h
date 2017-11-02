@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (weak, nonatomic) IBOutlet UITableView *attendenceTable;
 @property AppDelegate*AD;
+@property NSMutableDictionary*ATDict;
 @end

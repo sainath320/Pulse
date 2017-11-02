@@ -19,6 +19,10 @@
 @property NSString*profile;
 @property NSMutableArray*attendenceArray;
 @property NSMutableArray*invertedArray;
+@property NSMutableString*batchID;
+@property NSMutableString*studentID;
+@property NSMutableString*firstName;
+@property NSMutableString*lastName;
 
 @end
 

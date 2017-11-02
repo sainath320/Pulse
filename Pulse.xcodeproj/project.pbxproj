@@ -30,8 +30,11 @@
 		925196851F9F054100ED725A /* brn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 925196841F9F054100ED725A /* brn.jpg */; };
 		9251968A1F9F0F8700ED725A /* brninfotech-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 925196891F9F0F8700ED725A /* brninfotech-2.png */; };
 		9251968C1F9F180900ED725A /* logo-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 9251968B1F9F180900ED725A /* logo-big.png */; };
+		925B73B31FAAE88100EE9748 /* AttdenceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 925B73B11FAAE88100EE9748 /* AttdenceTable.m */; };
+		925B73B41FAAE88100EE9748 /* AttdenceTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925B73B21FAAE88100EE9748 /* AttdenceTable.xib */; };
 		92775E391FA9C66F00F882D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92775E371FA9C66F00F882D5 /* Model.xcdatamodeld */; };
 		92775E3C1FA9C6D200F882D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92775E3B1FA9C6D200F882D5 /* CoreData.framework */; };
+		92775E3E1FAA253900F882D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92775E3D1FAA253900F882D5 /* QuartzCore.framework */; };
 		9278FF6F1FA0A0D9001C42AC /* uncheck.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9278FF6E1FA0A0D9001C42AC /* uncheck.jpeg */; };
 		9278FF711FA0A103001C42AC /* check.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9278FF701FA0A103001C42AC /* check.jpeg */; };
 		927E27951FA845740054526E /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 927E27941FA845740054526E /* Singleton.m */; };
@@ -90,8 +93,12 @@
 		925196841F9F054100ED725A /* brn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = brn.jpg; path = ../brn.jpg; sourceTree = "<group>"; };
 		925196891F9F0F8700ED725A /* brninfotech-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brninfotech-2.png"; sourceTree = "<group>"; };
 		9251968B1F9F180900ED725A /* logo-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-big.png"; sourceTree = "<group>"; };
+		925B73B01FAAE88100EE9748 /* AttdenceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttdenceTable.h; sourceTree = "<group>"; };
+		925B73B11FAAE88100EE9748 /* AttdenceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttdenceTable.m; sourceTree = "<group>"; };
+		925B73B21FAAE88100EE9748 /* AttdenceTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttdenceTable.xib; sourceTree = "<group>"; };
 		92775E381FA9C66F00F882D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		92775E3B1FA9C6D200F882D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		92775E3D1FAA253900F882D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9278FF6E1FA0A0D9001C42AC /* uncheck.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uncheck.jpeg; sourceTree = "<group>"; };
 		9278FF701FA0A103001C42AC /* check.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = check.jpeg; sourceTree = "<group>"; };
 		927E27931FA845740054526E /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92775E3E1FAA253900F882D5 /* QuartzCore.framework in Frameworks */,
 				92775E3C1FA9C6D200F882D5 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +145,9 @@
 				924998E01FA23D0600BEE9AA /* SWRevealViewController.h */,
 				924998E11FA23D0600BEE9AA /* SWRevealViewController.m */,
 				925196861F9F054700ED725A /* Images */,
+				925B73B01FAAE88100EE9748 /* AttdenceTable.h */,
+				925B73B11FAAE88100EE9748 /* AttdenceTable.m */,
+				925B73B21FAAE88100EE9748 /* AttdenceTable.xib */,
 			);
 			name = VewControllers;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 		92775E3A1FA9C6D200F882D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92775E3D1FAA253900F882D5 /* QuartzCore.framework */,
 				92775E3B1FA9C6D200F882D5 /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -348,6 +360,7 @@
 				9278FF6F1FA0A0D9001C42AC /* uncheck.jpeg in Resources */,
 				9245318A1FA3177400B66DDF /* req.png in Resources */,
 				924531861FA3058B00B66DDF /* payment-512.png in Resources */,
+				925B73B41FAAE88100EE9748 /* AttdenceTable.xib in Resources */,
 				9245318C1FA32F7400B66DDF /* nature.jpg in Resources */,
 				920D14141F9E5B4400244C1E /* LaunchScreen.storyboard in Resources */,
 				924998E41FA23D6700BEE9AA /* Main.storyboard in Resources */,
@@ -387,6 +400,7 @@
 			files = (
 				920D140C1F9E5B4400244C1E /* ViewController.m in Sources */,
 				920D14091F9E5B4400244C1E /* AppDelegate.m in Sources */,
+				925B73B31FAAE88100EE9748 /* AttdenceTable.m in Sources */,
 				924998E21FA23D0600BEE9AA /* SWRevealViewController.m in Sources */,
 				92775E391FA9C66F00F882D5 /* Model.xcdatamodeld in Sources */,
 				920D14061F9E5B4400244C1E /* main.m in Sources */,

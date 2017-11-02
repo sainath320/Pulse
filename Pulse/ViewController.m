@@ -20,16 +20,13 @@
     [self createElements];
     [self lineTextField:self.emailTF];
     [self lineTextField:self.passwordTF];
+    [self shadowForElements:self.contentView];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)createElements{
     self.delegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
-    self.contentView.layer.shadowOffset=CGSizeMake(0.0f, 0.0f);
-    self.contentView.layer.shadowColor=[UIColor redColor].CGColor ;
-    self.contentView.layer.shadowRadius=7.0f;
-    self.contentView.layer.shadowOpacity=3.0f;
-    self.contentView.layer.shadowPath=[UIBezierPath bezierPathWithRect:self.contentView.bounds].CGPath;
+    
     
     [self.checkBTN setBackgroundImage:[UIImage imageNamed:@"uncheck.jpeg"] forState:UIControlStateNormal];
     [self.checkBTN setBackgroundImage:[UIImage imageNamed:@"check.jpeg"] forState:UIControlStateSelected];
@@ -47,6 +44,14 @@
     
     [self.emailTF resignFirstResponder];
     [self.passwordTF resignFirstResponder];
+}
+
+-(void)shadowForElements:(UIView*)sender{
+    sender.layer.shadowOffset=CGSizeMake(0.0f, 0.0f);
+    sender.layer.shadowColor=[UIColor colorWithDisplayP3Red:155.0f green:155.0f blue:155.0f alpha:1].CGColor ;
+    sender.layer.shadowRadius=7.0f;
+    sender.layer.shadowOpacity=3.0f;
+    sender.layer.shadowPath=[UIBezierPath bezierPathWithRect:sender.bounds].CGPath;
 }
 
 -(void)lineTextField:(UITextField*)textField{
@@ -92,7 +97,10 @@
             
                 self.responseDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             self.delegate.profile=[NSString stringWithFormat:@"%@",[self.responseDict objectForKey:@"profileImagePath"]];
-            NSLog(@"PROFILE IS %@",self.delegate.profile);
+            self.delegate.batchID=[NSMutableString stringWithFormat:@"%@",[self.responseDict objectForKey:@"batchID"]];
+            self.delegate.studentID=[NSMutableString stringWithFormat:@"%@",[self.responseDict objectForKey:@"studentID"]];
+            self.delegate.firstName=[NSMutableString stringWithFormat:@"%@",[self.responseDict objectForKey:@"firstName"]];
+            self.delegate.lastName=[NSMutableString stringWithFormat:@"%@",[self.responseDict objectForKey:@"surName"]];
                 NSLog(@"DATA %@",self.responseDict);
             if ([[self.responseDict objectForKey:@"loggedIn"]isEqualToString:@"yes"]) {
                 
