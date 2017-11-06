@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 #import "AppDelegate.h"
+#import "AttdenceTable.h"
+#import "DailyAttendence.h"
 
-@interface AttendenceView : UIViewController
+@interface AttendenceView : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (weak, nonatomic) IBOutlet UITableView *attendenceTable;
 @property AppDelegate*AD;
-@property NSMutableDictionary*ATDict;
+
+@property NSArray*atArray;
+@property NSArray*keyArray;
 @end

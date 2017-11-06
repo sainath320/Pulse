@@ -25,8 +25,11 @@
 }
 
 -(void)createElements{
-    //self.ATDict=[[NSMutableDictionary alloc]init];
     self.AD=(AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+        self.atArray=@[@"TotalDays",@"WorkingDays",@"Leaves",@"Absents",@"DaysAttended",@"UpdatesSent",@"WorkingHours",@"WorkedHours",@"OverallSpentSummary",@"WorkedPerDay(AvgHrs)",@"ShortagePerDay(AvgHrs)",@"LateToOffice",@"MinimunHrsMissed",@"MaxPoints",@"PointsEarned",@"YourPerformanceScore"];
+    
+    
     
         [self.menuButton setTarget:self.revealViewController];
         [self.menuButton setAction:@selector(revealToggle:)];
@@ -63,17 +66,13 @@
         if (data!=nil) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                 self.AD.attendenceArray=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                
-                
-                    self.ATDict=[self.AD.attendenceArray objectAtIndex:0];
-                    
-                    if (self.ATDict.count>0) {
-                [self.ATDict removeObjectsForKeys:@[@"batchID",@"email",@"firstName",@"isAttendedToday",@"isLateToday",@"lastAttendedDate",@"lastCheckInTime",@"lastName",@"mobileNo",@"numberOfTimesLeftEarly",@"profilePath",@"reasonForNonAttendance",@"studentID"]];   
-                    }
+                   
                     
                     
-                    NSLog(@"Array count is %@",self.ATDict );
-                
+                    self.attendenceTable.delegate=self;
+                    self.attendenceTable.dataSource=self;
+                    [self.attendenceTable reloadData];
+ //NSLog(@"ARRAY IS %@",[self.AD.attendenceArray objectAtIndex:0]);
                 
             });
             
@@ -92,6 +91,55 @@
     }];
     [pulse.dataTask resume];
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.atArray.count;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 68;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AttdenceTable*cell=[tableView dequeueReusableCellWithIdentifier:@"Alekya"];
+    if (cell==nil) {
+        NSArray*xibArray=[[NSBundle mainBundle]loadNibNamed:@"AttdenceTable" owner:self options:nil];
+        cell=[xibArray objectAtIndex:0];
+    }
+    
+    
+    self.keyArray=@[@"totalDays",@"totalWorkingDays",@"totalLeaves",@"totalAbsents",@"totalDaysAttended",@"totalUpdatesSent",@"totalWorkingHours",@"totalWorkedHours",@"totalShortageHours",@"avgWorkingHours",@"avgShortageHours",@"numberOfTimesLateToOffice",@"numberOfTimesMinimumHoursMissed",@"maxPoints",@"pointsScored",@"percScored"];
+    
+    
+    
+    
+    
+    cell.keyLabel.text=[NSString stringWithFormat:@"%@",  [self.atArray objectAtIndex:indexPath.row]];
+    
+
+    cell.getLabel.text=[NSString stringWithFormat:@"%@",[[self.AD.attendenceArray objectAtIndex:0] objectForKey:[self.keyArray objectAtIndex:indexPath.row]]];
+    
+    
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DailyAttendence*DA=[self.storyboard instantiateViewControllerWithIdentifier:@"daily"];
+    
+    [[self navigationController]pushViewController:DA animated:YES];
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

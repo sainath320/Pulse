@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *keyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *getLabel;
 @property CALayer*sideBorder;
+
 @end
