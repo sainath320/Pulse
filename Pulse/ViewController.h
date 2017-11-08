@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "Singleton.h"
+#import "Account.h"
 
 @interface ViewController : UIViewController
 @property AppDelegate*delegate;
@@ -23,6 +24,7 @@
 @property NSMutableDictionary*responseDict;
 - (IBAction)onClickLogin:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+- (IBAction)onClickAccount:(id)sender;
 @property BOOL checkBoxSelected;
 @end
 

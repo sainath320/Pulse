@@ -129,4 +129,12 @@
     
     
 }
+- (IBAction)onClickAccount:(id)sender {
+    
+    Account*CA=[self.storyboard instantiateViewControllerWithIdentifier:@"sign"];
+    
+    [self presentViewController:CA animated:YES completion:^{
+        
+    }];
+}
 @end

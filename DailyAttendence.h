@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "DailyCell.h"
 
-@interface DailyAttendence : UIViewController
+@interface DailyAttendence : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *dailyTable;
 @property AppDelegate*app;
-
+@property NSArray*keyArray;
 @end

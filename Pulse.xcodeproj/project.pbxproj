@@ -32,6 +32,11 @@
 		9251968C1F9F180900ED725A /* logo-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 9251968B1F9F180900ED725A /* logo-big.png */; };
 		925B73B31FAAE88100EE9748 /* AttdenceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 925B73B11FAAE88100EE9748 /* AttdenceTable.m */; };
 		925B73B41FAAE88100EE9748 /* AttdenceTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925B73B21FAAE88100EE9748 /* AttdenceTable.xib */; };
+		9260C3AF1FB3581B006EC07B /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 9260C3AE1FB3581B006EC07B /* Account.m */; };
+		9260C3B21FB37B6F006EC07B /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 9260C3B11FB37B6F006EC07B /* Request.m */; };
+		9260C3B51FB37B85006EC07B /* Leave.m in Sources */ = {isa = PBXBuildFile; fileRef = 9260C3B41FB37B85006EC07B /* Leave.m */; };
+		9260C3B81FB37B9C006EC07B /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9260C3B71FB37B9C006EC07B /* Location.m */; };
+		9260C3BB1FB37BBD006EC07B /* AppSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9260C3BA1FB37BBD006EC07B /* AppSearch.m */; };
 		92658A351FAC7F8200E1EB2E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92658A341FAC7F8200E1EB2E /* AVFoundation.framework */; };
 		92658A371FAC7F8A00E1EB2E /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92658A361FAC7F8A00E1EB2E /* AVKit.framework */; };
 		92658A3A1FACD1E200E1EB2E /* DailyAttendence.m in Sources */ = {isa = PBXBuildFile; fileRef = 92658A391FACD1E200E1EB2E /* DailyAttendence.m */; };
@@ -101,6 +106,16 @@
 		925B73B01FAAE88100EE9748 /* AttdenceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttdenceTable.h; sourceTree = "<group>"; };
 		925B73B11FAAE88100EE9748 /* AttdenceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttdenceTable.m; sourceTree = "<group>"; };
 		925B73B21FAAE88100EE9748 /* AttdenceTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttdenceTable.xib; sourceTree = "<group>"; };
+		9260C3AD1FB3581B006EC07B /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		9260C3AE1FB3581B006EC07B /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		9260C3B01FB37B6F006EC07B /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		9260C3B11FB37B6F006EC07B /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
+		9260C3B31FB37B85006EC07B /* Leave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leave.h; sourceTree = "<group>"; };
+		9260C3B41FB37B85006EC07B /* Leave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leave.m; sourceTree = "<group>"; };
+		9260C3B61FB37B9C006EC07B /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		9260C3B71FB37B9C006EC07B /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		9260C3B91FB37BBD006EC07B /* AppSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSearch.h; sourceTree = "<group>"; };
+		9260C3BA1FB37BBD006EC07B /* AppSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSearch.m; sourceTree = "<group>"; };
 		92658A341FAC7F8200E1EB2E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		92658A361FAC7F8A00E1EB2E /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		92658A381FACD1E200E1EB2E /* DailyAttendence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyAttendence.h; sourceTree = "<group>"; };
@@ -166,6 +181,16 @@
 				9295EFCC1FB0608A00345FF7 /* DailyCell.h */,
 				9295EFCD1FB0608A00345FF7 /* DailyCell.m */,
 				9295EFCE1FB0608A00345FF7 /* DailyCell.xib */,
+				9260C3AD1FB3581B006EC07B /* Account.h */,
+				9260C3AE1FB3581B006EC07B /* Account.m */,
+				9260C3B01FB37B6F006EC07B /* Request.h */,
+				9260C3B11FB37B6F006EC07B /* Request.m */,
+				9260C3B31FB37B85006EC07B /* Leave.h */,
+				9260C3B41FB37B85006EC07B /* Leave.m */,
+				9260C3B61FB37B9C006EC07B /* Location.h */,
+				9260C3B71FB37B9C006EC07B /* Location.m */,
+				9260C3B91FB37BBD006EC07B /* AppSearch.h */,
+				9260C3BA1FB37BBD006EC07B /* AppSearch.m */,
 			);
 			name = VewControllers;
 			sourceTree = "<group>";
@@ -422,14 +447,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				920D140C1F9E5B4400244C1E /* ViewController.m in Sources */,
+				9260C3B81FB37B9C006EC07B /* Location.m in Sources */,
 				9295EFCF1FB0608A00345FF7 /* DailyCell.m in Sources */,
 				920D14091F9E5B4400244C1E /* AppDelegate.m in Sources */,
+				9260C3B51FB37B85006EC07B /* Leave.m in Sources */,
 				925B73B31FAAE88100EE9748 /* AttdenceTable.m in Sources */,
 				924998E21FA23D0600BEE9AA /* SWRevealViewController.m in Sources */,
 				92775E391FA9C66F00F882D5 /* Model.xcdatamodeld in Sources */,
 				920D14061F9E5B4400244C1E /* main.m in Sources */,
 				92658A3A1FACD1E200E1EB2E /* DailyAttendence.m in Sources */,
+				9260C3B21FB37B6F006EC07B /* Request.m in Sources */,
 				927E27951FA845740054526E /* Singleton.m in Sources */,
+				9260C3AF1FB3581B006EC07B /* Account.m in Sources */,
+				9260C3BB1FB37BBD006EC07B /* AppSearch.m in Sources */,
 				924998DC1FA1DFFD00BEE9AA /* TableViewController.m in Sources */,
 				920701691FA26B5C0025D482 /* AttendenceView.m in Sources */,
 			);
