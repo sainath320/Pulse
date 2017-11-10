@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Request : UIViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBTN;
 
 @end

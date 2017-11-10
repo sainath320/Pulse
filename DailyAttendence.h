@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *dailyTable;
 @property AppDelegate*app;
 @property NSArray*keyArray;
+@property NSArray*fetchedArray;
 @end

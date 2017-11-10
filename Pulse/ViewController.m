@@ -52,7 +52,11 @@
     sender.layer.shadowRadius=7.0f;
     sender.layer.shadowOpacity=3.0f;
     sender.layer.shadowPath=[UIBezierPath bezierPathWithRect:sender.bounds].CGPath;
+    //sender.layer.rasterizationScale=[sender bounds].size.width;
+    sender.layer.shouldRasterize=YES;
 }
+
+
 
 -(void)lineTextField:(UITextField*)textField{
     

@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *TSLabel;
 @property (weak, nonatomic) IBOutlet UILabel *SSLabel;
 @property (weak, nonatomic) IBOutlet UILabel *PSLabel;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
 
 @end

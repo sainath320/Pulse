@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AppSearch : UIViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 
 @end

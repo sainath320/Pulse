@@ -7,6 +7,7 @@
 //
 
 #import "Request.h"
+#import "SWRevealViewController.h"
 
 @interface Request ()
 
@@ -16,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createElements];
     // Do any additional setup after loading the view.
+}
+
+-(void)createElements{
+    
+    [self.menuBTN setTarget:self.revealViewController];
+    [self.menuBTN setAction:@selector(revealToggle:)];
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {

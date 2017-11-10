@@ -19,14 +19,28 @@
     
     self.app=(AppDelegate*)[[UIApplication sharedApplication]delegate];
     [self createElements];
+    [self shouldAutorotate];
+    [self supportedInterfaceOrientation];
     NSLog(@"MY APP IS %@",self.app.attendenceArray);
     // Do any additional setup after loading the view.
 }
 
 -(void)createElements{
-    
+    self.dailyTable.separatorStyle=UITableViewCellStyleValue1;
+    self.dailyTable.separatorColor=[UIColor greenColor];
     self.dailyTable.delegate=self;
     self.dailyTable.dataSource=self;
+}
+
+-(BOOL)shouldAutorotate{
+    
+    return NO;
+}
+-(NSInteger)supportedInterfaceOrientation{
+    
+    // AppDelegate*appdelegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,7 +54,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 200;
+    return 251;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
