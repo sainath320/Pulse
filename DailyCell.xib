@@ -15,12 +15,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="251"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="250.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="251"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMk-uo-AjA">
                         <rect key="frame" x="10" y="10" width="394" height="230.5"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT2-yC-sLq">
+                                <rect key="frame" x="35" y="100" width="324" height="30.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eT2-yC-sLq" firstAttribute="leading" secondItem="rMk-uo-AjA" secondAttribute="leading" constant="35" id="5xJ-qQ-9AG"/>
+                            <constraint firstAttribute="trailing" secondItem="eT2-yC-sLq" secondAttribute="trailing" constant="35" id="blt-nE-HhX"/>
+                            <constraint firstAttribute="bottom" secondItem="eT2-yC-sLq" secondAttribute="bottom" constant="100" id="pkO-qx-lSm"/>
+                            <constraint firstItem="eT2-yC-sLq" firstAttribute="top" secondItem="rMk-uo-AjA" secondAttribute="top" constant="100" id="vib-Dw-bJC"/>
+                        </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-mt-nRK">
                         <rect key="frame" x="10" y="10" width="80" height="51"/>
@@ -183,6 +197,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="r14-px-7BP" secondAttribute="bottom" constant="42.5" id="1yf-Ab-TQQ"/>
                     <constraint firstItem="dJQ-MP-J9w" firstAttribute="top" secondItem="Tlp-Wq-vRS" secondAttribute="bottom" constant="20" id="5Pu-8F-fz1"/>
@@ -217,8 +232,15 @@
                 <outlet property="cellView" destination="rMk-uo-AjA" id="GAX-ot-mbE"/>
                 <outlet property="checkInLabel" destination="p0B-os-mY7" id="GJK-9N-Yne"/>
                 <outlet property="checkOutLabel" destination="Msd-lx-RGJ" id="4t0-gU-iMx"/>
+                <outlet property="ciLabel" destination="hYb-s1-6PG" id="Ijr-O2-mgi"/>
+                <outlet property="coLabel" destination="EkW-1y-eKY" id="uUw-g7-vec"/>
                 <outlet property="countLabel" destination="9Gy-0b-5uv" id="sES-IB-ea3"/>
                 <outlet property="dateLabel" destination="b1H-fl-vKh" id="L6K-c3-KMc"/>
+                <outlet property="displayLabel" destination="eT2-yC-sLq" id="bm9-qP-7Ca"/>
+                <outlet property="displayView" destination="rMk-uo-AjA" id="CxN-O2-WGI"/>
+                <outlet property="pointLabel" destination="mdF-oi-KGU" id="rnq-lA-ISk"/>
+                <outlet property="summLabel" destination="KTc-Ex-VcK" id="Si0-Hm-hHf"/>
+                <outlet property="timeLabel" destination="PTX-Q9-5Om" id="FgN-M3-66G"/>
                 <outlet property="weekLabel" destination="eID-X5-k3E" id="Nzx-WU-vjx"/>
             </connections>
             <point key="canvasLocation" x="23.5" y="75.5"/>

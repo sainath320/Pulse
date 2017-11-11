@@ -12,33 +12,29 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-   // [self labelBorder:self.keyLabel];
-   // [self labelBorder:self.getLabel];
+    [self shadowForElements:self.CNView];
     // Initialization code
 }
 
 
--(void)labelBorder:(UILabel*)label{
+-(void)shadowForElements:(UIView*)sender{
     
-    self.sideBorder=[CALayer layer];
-    self.sideBorder.borderColor = [UIColor redColor].CGColor;
-    self.sideBorder.borderWidth = 1;
-    self.sideBorder.frame = CGRectMake(0, 0, CGRectGetWidth(label.frame), CGRectGetHeight(label.frame)+2);
+    sender.layer.shadowOffset=CGSizeMake(0.0f, 0.0f);
+//    if (UIInterfaceOrientationLandscapeLeft) {
+//       sender.layer.shadowOffset=CGSizeMake(9.0f, 9.0f);
+//    }
+    sender.layer.shadowColor=[UIColor whiteColor].CGColor ;
+    sender.layer.shadowRadius=5.0f;
+    sender.layer.shadowOpacity=1.0f;
     
-    [label.layer addSublayer:self.sideBorder];
-    label.layer.masksToBounds=YES;
-     
-    /*
-    label.layer.shadowOffset=CGSizeMake(0.0f, 0.0f);
-    label.layer.shadowColor=[UIColor brownColor].CGColor ;
-    label.layer.shadowRadius=7.0f;
-    label.layer.shadowOpacity=1.0f;
-    label.layer.shadowPath=[UIBezierPath bezierPathWithRect:label.bounds].CGPath;
+    UIEdgeInsets edgeInsets=UIEdgeInsetsMake(0, 0, -1.5f, 0);
+    UIBezierPath*shadowPath=[UIBezierPath bezierPathWithRect:UIEdgeInsetsInsetRect(sender.bounds, edgeInsets)];
+    sender.layer.shadowPath=shadowPath.CGPath;
+    sender.preservesSuperviewLayoutMargins=YES;
     
-    label.layer.masksToBounds=YES;
-    label.clipsToBounds=true;
-    */
 }
+
+
      
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

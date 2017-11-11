@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DailyCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *displayView;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weekLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -18,5 +19,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *SSLabel;
 @property (weak, nonatomic) IBOutlet UILabel *PSLabel;
 @property (weak, nonatomic) IBOutlet UIView *cellView;
+@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ciLabel;
+@property (weak, nonatomic) IBOutlet UILabel *coLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointLabel;
 
 @end
